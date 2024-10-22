@@ -102,8 +102,8 @@ stage('trigger-deployment') {
             yq eval '.orders_db_rabbitmq.tag = "'"$TAG"'"' -i dev-values.yaml
             yq eval '.orders_db.tag = "'"$TAG"'"' -i dev-values.yaml
             yq eval '.orders.tag = "'"$TAG"'"' -i dev-values.yaml
-            git config --global user.name "devopseasylearning"
-            git config --global user.email info@devopseasylearning.com
+            git config --global user.name "michael-ayo"
+            git config --global user.email michaelsobamowo@gmail.com
             
             git add -A
             if git diff-index --quiet HEAD; then
