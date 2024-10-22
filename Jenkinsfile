@@ -110,7 +110,7 @@ stage('trigger-deployment') {
                 echo "No changes to commit"
             else
                 git commit -m "updating Orders to ${TAG}"
-                git push origin main
+                git push origin dev
             fi
         '''
     }
