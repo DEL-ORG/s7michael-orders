@@ -99,9 +99,9 @@ stage('trigger-deployment') {
             rm -rf s7michael-deployment || true
             git clone git@github.com:DEL-ORG/s7michael-deployment.git
             cd s7michael-deployment/chart
-            yq eval '.orders_db_rabbitmq.tag = "'"$TAG"'"' -i dev-values.yaml
-            yq eval '.orders_db.tag = "'"$TAG"'"' -i dev-values.yaml
-            yq eval '.orders.tag = "'"$TAG"'"' -i dev-values.yaml
+            yq eval '.orders_db_rabbitmq.tag = "'"$TAG"'"' -i chart/dev-values.yaml
+            yq eval '.orders_db.tag = "'"$TAG"'"' -i chart/dev-values.yaml
+            yq eval '.orders.tag = "'"$TAG"'"' -i chart/dev-values.yaml
             git config --global user.name "michael-ayo"
             git config --global user.email michaelsobamowo@gmail.com
             
