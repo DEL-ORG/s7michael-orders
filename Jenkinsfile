@@ -97,7 +97,7 @@ stage('trigger-deployment') {
         sh '''
             TAG=$(git rev-parse --short=6 HEAD)
             rm -rf s7michael-deployment || true
-            git clone git@github.com:DEL-ORG/s7michael-deployment.git
+            git clone --branch dev git@github.com:DEL-ORG/s7michael-deployment.git
             cd s7michael-deployment/chart
             yq eval '.orders_db_rabbitmq.tag = "'"$TAG"'"' -i dev-values.yaml
             yq eval '.orders_db.tag = "'"$TAG"'"' -i dev-values.yaml
